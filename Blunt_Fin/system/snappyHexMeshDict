@@ -1,0 +1,98 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  Reconstructed for Robust Snapping - Level 6/7 Strategy
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      snappyHexMeshDict;
+}
+
+castellatedMesh true;
+snap            true;
+addLayers       false;
+
+geometry
+{
+    Fin.stl  
+    {
+        type triSurfaceMesh;
+        name Fin; 
+    }
+}
+
+castellatedMeshControls
+{
+    maxLocalCells 1000000;
+    maxGlobalCells 4000000; 
+    minRefinementCells 10;
+    nCellsBetweenLevels 4; // Reduced from 4 for smoother transitions
+
+    features 
+    (
+        {
+            file "Fin.eMesh"; 
+            level 6; // Dropped from 8 to prevent cell collapse
+        }
+    );
+
+    refinementSurfaces
+    {
+        Fin 
+        {
+            level (6 7); // Dropped from 7 8
+            patchInfo { type wall; }
+        }
+    }
+
+    refinementRegions
+    {
+        Fin
+        {
+            mode distance;
+            levels ((0.005 7)); 
+        }
+    }
+    
+    resolveFeatureAngle 30;
+    mergeTolerance 1e-4; // This tells snappy to ignore anything smaller than 0.1mm
+    allowFreeStandingZoneFaces true;
+    locationInMesh (-0.5 0 0.4); 
+}
+
+snapControls
+{
+    nSmoothPatch 5;       // Increased for smoother surface approach
+    tolerance 1.0;        // Increased to help "search" for surface
+    nSolveIter 100;      
+    nRelaxIter 15;        // More relaxation iterations to fix errors
+    
+    nFeatureSnapIter 15; 
+    implicitFeatureSnap false; 
+    explicitFeatureSnap true; 
+    multiRegionFeatureSnap true;
+}
+
+addLayersControls {}
+
+meshQualityControls
+{
+    maxNonOrtho         75; // Even more relaxed
+    maxBoundarySkewness  20;
+    maxInternalSkewness  4;
+    maxConcave          80;
+    minArea         1e-13; 
+    minVol        -1e30; // Allows negative volumes during snapping
+    minTwist      -1e30;
+    minFaceWeight 0.02;
+    minVolRatio          0.01;
+    minTetQuality       -1e30; // Allows inverted tets
+    errorReduction      0.5;   // Be less aggressive
+    nSmoothScale        10;    // More smoothing to try and save the distorted cells
+    minTriangleTwist -1e30;
+    minDeterminant    0.001;
+}
+
+mergeTolerance 1e-4;
+debug 0;

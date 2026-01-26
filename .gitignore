@@ -1,0 +1,24 @@
+# -------------------------------
+# OpenFOAM time directories
+# -------------------------------
+# Ignore generated meshes 
+**/constant/polyMesh/
+
+# Ignore integer and float time folders
+**/[1-9]*/
+**/[1-9]*.[0-9]*/
+
+# -------------------------------
+# Keep required case folders
+# -------------------------------
+!**/0.orig/
+!**/constant/
+!**/system/
+!**/logs/
+!**/postProcessing/
+
+# -------------------------------
+# Keep all scripts
+# -------------------------------
+!**/*.py
+!**/*.sh

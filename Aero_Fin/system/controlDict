@@ -1,0 +1,107 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  v2412                                 |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      controlDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+application     rhoSimpleFoam;
+
+startFrom       startTime;
+
+startTime       0;
+
+stopAt          endTime;
+
+endTime         2500;
+
+deltaT          1;
+
+writeControl    timeStep;
+
+writeInterval   50;
+
+purgeWrite      0;
+
+writeFormat     binary;
+
+writePrecision  8;
+
+writeCompression on;
+
+timeFormat      general;
+
+timePrecision   6;
+
+runTimeModifiable true;
+
+functions
+{
+    residuals
+    {
+        type            solverInfo;
+        libs            ("libutilityFunctionObjects.so");
+        fields          (p U h T nuTilda alphat nut); 
+        writeControl    timeStep;
+        writeInterval   1;
+        log             true;
+    }
+
+    /*
+    writeFields
+    {
+        type            writeObjects;
+        libs            (utilityFunctionObjects);
+        objects         (p U h T nuTilda alphat nut); 
+        writeControl    timeStep;
+        writeInterval   1;
+    }
+
+    fieldMonitoring
+    {
+        type            fieldMinMax;
+        libs            (fieldFunctionObjects);
+        fields          (p U h T nuTilda alphat nut);
+        log             true; 
+    }
+    */
+
+    forceCoeffs
+    {
+        type            forceCoeffs;
+        libs            ("libforces.so");
+        
+        patches         (Fin); 
+
+        rhoInf  1.154;
+        rho     rho;      
+        
+        magUInf         236.6; 
+
+        // Reference dimensions for coefficients
+        lRef            0.1033;   // Reference length (m)
+        Aref            0.00678;  // Reference area (m^2)
+
+        // Direction vectors
+        dragDir         (1 0 0);  // Flow is in +X 
+        liftDir         (0 1 0);  // Lift is in +Y 
+        pitchAxis       (0 0 1);  // Rotation axis 
+        
+        CofR            (0.035 0 0); // Center of Rotation
+
+        writeControl    timeStep;
+        writeInterval   1;
+        log             true; 
+    }
+}
+
+// ************************************************************************* //

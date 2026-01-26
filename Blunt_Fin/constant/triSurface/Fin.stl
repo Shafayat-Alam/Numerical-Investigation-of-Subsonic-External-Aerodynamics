@@ -1,0 +1,86 @@
+solid zone0
+ facet normal 0 0 1
+  outer loop
+   vertex 0.0225514 -0.003048 0.06985
+   vertex 0.0769997 -0.003048 0.06985
+   vertex 0.0225514 0.000127 0.06985
+  endloop
+ endfacet
+ facet normal -0 0 1
+  outer loop
+   vertex 0.0225514 0.000127 0.06985
+   vertex 0.0769997 -0.003048 0.06985
+   vertex 0.0769997 0.000127 0.06985
+  endloop
+ endfacet
+ facet normal -0.747798 -1.4742e-16 0.663926
+  outer loop
+   vertex -0.0394643 -0.003048 -1.40998e-18
+   vertex 0.0225514 -0.003048 0.06985
+   vertex -0.0394643 0.000127 -7.04992e-19
+  endloop
+ endfacet
+ facet normal -0.747798 0 0.663926
+  outer loop
+   vertex -0.0394643 0.000127 -7.04992e-19
+   vertex 0.0225514 -0.003048 0.06985
+   vertex 0.0225514 0.000127 0.06985
+  endloop
+ endfacet
+ facet normal 0 2.22043e-16 -1
+  outer loop
+   vertex 0.100236 -0.003048 -1.40998e-18
+   vertex -0.0394643 -0.003048 -1.40998e-18
+   vertex 0.100236 0.000127 -7.04992e-19
+  endloop
+ endfacet
+ facet normal 0 2.22043e-16 -1
+  outer loop
+   vertex 0.100236 0.000127 -7.04992e-19
+   vertex -0.0394643 -0.003048 -1.40998e-18
+   vertex -0.0394643 0.000127 -7.04992e-19
+  endloop
+ endfacet
+ facet normal 0.948875 -0 0.315653
+  outer loop
+   vertex 0.0769997 -0.003048 0.06985
+   vertex 0.100236 -0.003048 -1.40998e-18
+   vertex 0.0769997 0.000127 0.06985
+  endloop
+ endfacet
+ facet normal 0.948875 0 0.315653
+  outer loop
+   vertex 0.0769997 0.000127 0.06985
+   vertex 0.100236 -0.003048 -1.40998e-18
+   vertex 0.100236 0.000127 -7.04992e-19
+  endloop
+ endfacet
+ facet normal 0 1 0
+  outer loop
+   vertex 0.0769997 0.000127 0.06985
+   vertex 0.100236 0.000127 -7.04992e-19
+   vertex 0.0225514 0.000127 0.06985
+  endloop
+ endfacet
+ facet normal 0 1 0
+  outer loop
+   vertex 0.0225514 0.000127 0.06985
+   vertex 0.100236 0.000127 -7.04992e-19
+   vertex -0.0394643 0.000127 -7.04992e-19
+  endloop
+ endfacet
+ facet normal -0 -1 -0
+  outer loop
+   vertex 0.0769997 -0.003048 0.06985
+   vertex 0.0225514 -0.003048 0.06985
+   vertex 0.100236 -0.003048 -1.40998e-18
+  endloop
+ endfacet
+ facet normal 0 -1 0
+  outer loop
+   vertex 0.100236 -0.003048 -1.40998e-18
+   vertex 0.0225514 -0.003048 0.06985
+   vertex -0.0394643 -0.003048 -1.40998e-18
+  endloop
+ endfacet
+endsolid zone0

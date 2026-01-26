@@ -1,0 +1,184 @@
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2412                                  |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : _e5c6ccc3-20250814 OPENFOAM=2412 patch=250814 version=2412
+Arch   : "LSB;label=32;scalar=64"
+Exec   : decomposePar -force
+Date   : Jan 25 2026
+Time   : 21:50:36
+Host   : Albert
+PID    : 452019
+I/O    : uncollated
+Case   : /home/shafa/controlSurfaces/Blunt_Fin
+nProcs : 1
+trapFpe: Floating point exception trapping enabled (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 5, maxFileModificationPolls 20)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+--> FOAM Warning : 
+    From virtual void Foam::Time::readDict()
+    in file db/Time/TimeIO.C at line 403
+    Reading "system/controlDict" at line 17 to 103
+    Disabled output compression for non-ascii format (inefficient/ineffective)
+
+
+Decomposing mesh
+
+Create mesh
+
+Calculating distribution of cells
+Decomposition method scotch [6] (region region0)
+
+Finished decomposition in 4.67 s
+
+Calculating original mesh data
+
+Distributing cells to processors
+
+Distributing faces to processors
+
+Distributing points to processors
+
+Constructing processor meshes
+--> FOAM Warning : 
+    From virtual void Foam::Time::readDict()
+    in file db/Time/TimeIO.C at line 403
+    Reading "system/controlDict" at line 17 to 103
+    Disabled output compression for non-ascii format (inefficient/ineffective)
+
+Processor 0
+    Number of cells = 595580
+    Number of points = 619838
+    Number of faces shared with processor 1 = 4976
+    Number of faces shared with processor 2 = 7509
+    Number of faces shared with processor 3 = 5262
+    Number of processor patches = 3
+    Number of processor faces = 17747
+    Number of boundary faces = 30185
+--> FOAM Warning : 
+    From virtual void Foam::Time::readDict()
+    in file db/Time/TimeIO.C at line 403
+    Reading "system/controlDict" at line 17 to 103
+    Disabled output compression for non-ascii format (inefficient/ineffective)
+
+Processor 1
+    Number of cells = 597570
+    Number of points = 622944
+    Number of faces shared with processor 0 = 4976
+    Number of faces shared with processor 2 = 8845
+    Number of faces shared with processor 3 = 14633
+    Number of processor patches = 3
+    Number of processor faces = 28454
+    Number of boundary faces = 21684
+--> FOAM Warning : 
+    From virtual void Foam::Time::readDict()
+    in file db/Time/TimeIO.C at line 403
+    Reading "system/controlDict" at line 17 to 103
+    Disabled output compression for non-ascii format (inefficient/ineffective)
+
+Processor 2
+    Number of cells = 593187
+    Number of points = 615790
+    Number of faces shared with processor 0 = 7509
+    Number of faces shared with processor 1 = 8845
+    Number of processor patches = 2
+    Number of processor faces = 16354
+    Number of boundary faces = 28322
+--> FOAM Warning : 
+    From virtual void Foam::Time::readDict()
+    in file db/Time/TimeIO.C at line 403
+    Reading "system/controlDict" at line 17 to 103
+    Disabled output compression for non-ascii format (inefficient/ineffective)
+
+Processor 3
+    Number of cells = 601695
+    Number of points = 631196
+    Number of faces shared with processor 0 = 5262
+    Number of faces shared with processor 1 = 14633
+    Number of faces shared with processor 4 = 8414
+    Number of faces shared with processor 5 = 7825
+    Number of processor patches = 4
+    Number of processor faces = 36134
+    Number of boundary faces = 22198
+--> FOAM Warning : 
+    From virtual void Foam::Time::readDict()
+    in file db/Time/TimeIO.C at line 403
+    Reading "system/controlDict" at line 17 to 103
+    Disabled output compression for non-ascii format (inefficient/ineffective)
+
+Processor 4
+    Number of cells = 599391
+    Number of points = 623766
+    Number of faces shared with processor 3 = 8414
+    Number of faces shared with processor 5 = 10284
+    Number of processor patches = 2
+    Number of processor faces = 18698
+    Number of boundary faces = 29480
+--> FOAM Warning : 
+    From virtual void Foam::Time::readDict()
+    in file db/Time/TimeIO.C at line 403
+    Reading "system/controlDict" at line 17 to 103
+    Disabled output compression for non-ascii format (inefficient/ineffective)
+
+Processor 5
+    Number of cells = 596577
+    Number of points = 619974
+    Number of faces shared with processor 3 = 7825
+    Number of faces shared with processor 4 = 10284
+    Number of processor patches = 2
+    Number of processor faces = 18109
+    Number of boundary faces = 28131
+
+Number of processor faces = 67748
+Max number of cells = 601695 (0.73018973% above average 597333.33)
+Max number of processor patches = 4 (50% above average 2.6666667)
+Max number of faces between processors = 36134 (60.007676% above average 22582.667)
+
+Time = 0
+
+Processor 0: field transfer
+--> FOAM Warning : 
+    From virtual void Foam::Time::readDict()
+    in file db/Time/TimeIO.C at line 403
+    Reading "system/controlDict" at line 17 to 103
+    Disabled output compression for non-ascii format (inefficient/ineffective)
+Processor 1: field transfer
+--> FOAM Warning : 
+    From virtual void Foam::Time::readDict()
+    in file db/Time/TimeIO.C at line 403
+    Reading "system/controlDict" at line 17 to 103
+    Disabled output compression for non-ascii format (inefficient/ineffective)
+Processor 2: field transfer
+--> FOAM Warning : 
+    From virtual void Foam::Time::readDict()
+    in file db/Time/TimeIO.C at line 403
+    Reading "system/controlDict" at line 17 to 103
+    Disabled output compression for non-ascii format (inefficient/ineffective)
+Processor 3: field transfer
+--> FOAM Warning : 
+    From virtual void Foam::Time::readDict()
+    in file db/Time/TimeIO.C at line 403
+    Reading "system/controlDict" at line 17 to 103
+    Disabled output compression for non-ascii format (inefficient/ineffective)
+Processor 4: field transfer
+--> FOAM Warning : 
+    From virtual void Foam::Time::readDict()
+    in file db/Time/TimeIO.C at line 403
+    Reading "system/controlDict" at line 17 to 103
+    Disabled output compression for non-ascii format (inefficient/ineffective)
+Processor 5: field transfer
+--> FOAM Warning : 
+    From virtual void Foam::Time::readDict()
+    in file db/Time/TimeIO.C at line 403
+    Reading "system/controlDict" at line 17 to 103
+    Disabled output compression for non-ascii format (inefficient/ineffective)
+
+End
+
