@@ -34,13 +34,13 @@ purgeWrite      0;
 
 writeFormat     binary;
 
-writePrecision  8;
+writePrecision  16;
 
 writeCompression on;
 
 timeFormat      general;
 
-timePrecision   6;
+timePrecision   16;
 
 runTimeModifiable true;
 
